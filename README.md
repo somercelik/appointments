@@ -1,6 +1,8 @@
 # appointments
 
-This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders.
+This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. 
+
+The application itself manages a doctor's appointment schedule and allows users to create their appointments. It includes the overlapping-forbidding logic and uses AWS infrastructure such as ==AWS Lambda==, ==AWS API Gateway==, ==DynamoDB==, ==CloudFormation==.
 
 - backend/create-appointment - Lambda function to create an appointment record in DynamoDB database
 - backend/get-appointments - Lambda function to retrieve appointment records from DynamoDB database
@@ -87,3 +89,5 @@ appointments$ cd backend/get-appointments
 hello-world$ npm install
 hello-world$ npm run test
 ```
+
+&copy; Soner Çelik, 2023
