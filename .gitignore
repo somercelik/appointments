@@ -1,0 +1,3 @@
+.aws-sam/
+backend/create-appointment/node_modules/
+backend/get-appointments/node_modules/

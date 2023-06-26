@@ -1,0 +1,22 @@
+{
+  "name": "psych",
+  "version": "1.0.0",
+  "description": "Rezervasyon",
+  "type": "module",
+  "main": "app.js",
+  "repository": "https://github.com/awslabs/aws-sam-cli/tree/develop/samcli/local/init/templates/cookiecutter-aws-sam-hello-nodejs",
+  "author": "SAM CLI",
+  "license": "MIT",
+  "dependencies": {
+    "axios": ">=0.21.1",
+    "crypto": "^1.0.1"
+  },
+  "scripts": {
+    "test": "mocha tests/unit/"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-dynamodb": "^3.354.0",
+    "chai": "^4.3.6",
+    "mocha": "^10.1.0"
+  }
+}

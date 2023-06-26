@@ -1,0 +1,54 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  psych
+
+  Sample SAM Template for psych
+
+Globals:
+  Function:
+    Timeout: 10
+
+Resources:
+  CreateAppointmentFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: backend/create-appointment/
+      Handler: app.handler
+      Runtime: nodejs18.x
+      Architectures:
+        - x86_64
+      Events:
+        CreateAppointment:
+          Type: Api
+          Properties:
+            Path: /appointments
+            Method: post
+  GetAppointmentsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: backend/get-appointments/
+      Handler: app.handler
+      Runtime: nodejs18.x
+      Architectures:
+        - x86_64
+      Events:
+        GetAppointments:
+          Type: Api
+          Properties:
+            Path: /appointments
+            Method: get
+Outputs:
+  CreateAppointmentFunction:
+    Description: "Randevu olusturan servise ait fonksiyon."
+    Value: !GetAtt CreateAppointmentFunction.Arn
+  CreateAppointmentFunctionIamRole:
+    Description: "Randevu olusturma servisi rolü"
+    Value: !GetAtt CreateAppointmentFunctionRole.Arn
+    
+  GetAppointmentsFunction:
+    Description: "Randevuları getiren servise ait fonksiyon."
+    Value: !GetAtt GetAppointmentsFunction.Arn
+  GetAppointmentsFunctionIamRole:
+    Description: "Randevuları getiren servis rolü"
+    Value: !GetAtt GetAppointmentsFunctionRole.Arn
