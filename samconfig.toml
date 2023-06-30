@@ -1,9 +1,9 @@
 version = 0.1
 [default.deploy.parameters]
-stack_name = "psych"
+stack_name = "appointments"
 resolve_s3 = false
-s3_prefix = "psych"
+s3_prefix = "appointments"
 region = "eu-central-1"
 capabilities = "CAPABILITY_IAM"
 image_repositories = []
-s3_bucket = "psych-deploy"
+s3_bucket = "appointments-deploy"

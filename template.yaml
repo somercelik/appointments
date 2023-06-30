@@ -1,9 +1,9 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
-  psych
+  appointments
 
-  Sample SAM Template for psych
+  Sample SAM Template for appointments
 
 Globals:
   Function:

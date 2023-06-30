@@ -35,7 +35,7 @@ sam deploy --guided
 Build your application with the `sam build` command.
 
 ```bash
-psych$ sam build
+appointments$ sam build
 ```
 
 The SAM CLI installs dependencies defined in `get-appointments/package.json`, creates a deployment package, and saves it in the `.aws-sam/build` folder.
@@ -45,14 +45,14 @@ Test a single function by invoking it directly with a test event. An event is a 
 Run functions locally and invoke them with the `sam local invoke` command.
 
 ```bash
-psych$ sam local invoke GetAppointmentsFunction --event backend/events/get-appointments-event.json
+appointments$ sam local invoke GetAppointmentsFunction --event backend/events/get-appointments-event.json
 ```
 
 The SAM CLI can also emulate your application's API. Use the `sam local start-api` to run the API locally on port 3000.
 
 ```bash
-psych$ sam local start-api
-psych$ curl http://localhost:3000/
+appointments$ sam local start-api
+appointments$ curl http://localhost:3000/
 ```
 
 The SAM CLI reads the application template to determine the API's routes and the functions that they invoke. The `Events` property on each function's definition includes the route and method for each path.
@@ -76,7 +76,7 @@ To simplify troubleshooting, SAM CLI has a command called `sam logs`. `sam logs`
 `NOTE`: This command works for all AWS Lambda functions; not just the ones you deploy using SAM.
 
 ```bash
-psych$ sam logs -n GetAppointmentsFunction --stack-name psych --tail
+appointments$ sam logs -n GetAppointmentsFunction --stack-name appointments --tail
 ```
 
 You can find more information and examples about filtering Lambda function logs in the [SAM CLI Documentation](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-logging.html).
